@@ -1,0 +1,112 @@
+pipeline {
+    agent any
+
+    environment {
+        BACKEND_REPO = '/Users/mz01-risingnrkim/Documents/workspace/codereview-gpt-admin-server-run'
+        FRONTEND_REPO = '/Users/mz01-risingnrkim/Documents/workspace/codereview-gpt-client'
+        PATH = "${env.PATH}:/Users/mz01-risingnrkim/.rd/bin/"
+        REACT_APP_SERVER_ENDPOINT = 'http://172.90.4.13:8080/api/v1/'
+    }
+
+    stages {
+        stage('Pull Backend') {
+            steps {
+                script {
+                    SLACK_CHANNEL = "jenkins-alert-risingnrkim"
+                    SLACK_SUCCESS_COLOR = "#2C953C";
+                    SLACK_FAIL_COLOR = "#FF3232";
+                    // Git Commit 계정
+                    //GIT_COMMIT_AUTHOR = sh(script: "git --no-pager show -s --format=%an ${env.GIT_COMMIT}", returnStdout: true).trim();
+                    // Git Commit 메시지
+                    //GIT_COMMIT_MESSAGE = sh(script: "git --no-pager show -s --format=%B ${env.GIT_COMMIT}", returnStdout: true).trim();
+                    dir(BACKEND_REPO) {
+                        sh 'git pull'
+                    }
+                }
+            }
+            post {
+                success {
+                    slackSend (
+                        channel: SLACK_CHANNEL,
+                        color: SLACK_SUCCESS_COLOR,
+                        message: "==================================================================\n배포 파이프라인이 시작되었습니다.\n"
+                        //message: "==================================================================\n배포 파이프라인이 시작되었습니다.\n${env.JOB_NAME}(${env.BUILD_NUMBER})\n${GIT_COMMIT_AUTHOR} - ${GIT_COMMIT_MESSAGE}\n${env.BUILD_URL}"
+                        )
+                }
+            }
+        }
+
+        stage('Pull Frontend') {
+            steps {
+                script {
+                    dir(FRONTEND_REPO) {
+                        sh 'git pull'
+                    }
+                }
+            }
+            post {
+                failure {
+                    slackSend (
+                        channel: SLACK_CHANNEL,
+                        color: SLACK_FAIL_COLOR,
+                        message: "front Image Build에 실패하였습니다."
+                    )
+                }
+            }
+        }
+
+        stage('Build Backend') {
+            steps {
+                script {
+                    dir(BACKEND_REPO) {
+                        sh './build.sh'
+                    }
+                }
+            }
+            post {
+                failure {
+                    slackSend (
+                        channel: SLACK_CHANNEL,
+                        color: SLACK_FAIL_COLOR,
+                        message: "back Image Build에 실패하였습니다."
+                    )
+                }
+            }
+        }
+
+        stage('Docker Compose Up') {
+            steps {
+                script {
+                    dir(BACKEND_REPO) {
+                        sh 'docker-compose up --detach'
+                    }
+                }
+            }
+
+            post {
+                success {
+                    slackSend (
+                        channel: SLACK_CHANNEL,
+                        color: SLACK_SUCCESS_COLOR,
+                        message: "배포에 성공하였습니다.\n=================================================================="
+                    )
+                }
+                failure {
+                    slackSend (
+                        channel: SLACK_CHANNEL,
+                        color: SLACK_FAIL_COLOR,
+                        message: "배포에 실패하였습니다.\n=================================================================="
+                    )
+                }
+            }
+        }
+
+        stage('Verify') {
+            steps {
+                script {
+                    sh 'curl http://localhost:3000'
+                }
+            }
+        }
+    }
+}

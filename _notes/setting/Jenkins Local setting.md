@@ -80,19 +80,18 @@ homebrew.jenkins-lts.service
 vim homebrew.mxcl.jenkins-lts.plist
 - 하단에 포트 지정
 - ListenAddress : 0.0.0.0  
-![eba2bd1791c713a10fd6fc9b2207fb56.png](../_resources/eba2bd1791c713a10fd6fc9b2207fb56.png)
+<img src="{{ site.baseurl }}/assets/eba2bd1791c713a10fd6fc9b2207fb56.png"/>
 
 
 
-![3a31bf0e77ea22193ef52edecdcdd245.png](../_resources/3a31bf0e77ea22193ef52edecdcdd245.png)
+<img src="{{ site.baseurl }}/assets/3a31bf0e77ea22193ef52edecdcdd245.png"/>
 
 
 ---
 Jenkins - pipeline create
 
 
-[jenkinsfile](../_resources/jenkinsfile)
-![f210da33c28546052ec9c717356dda22.png](../_resources/f210da33c28546052ec9c717356dda22.png)
+<a href="{{ site.baseurl }}/assets/jenkinsfile"/>jenkinsfile</a>]
 동작순서
 * backend git pull
 * frontend git pull

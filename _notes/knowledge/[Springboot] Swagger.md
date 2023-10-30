@@ -44,16 +44,16 @@ altitude: 0.0000
 ### API Test
 Try it out 눌러서 테스트가 가능함
 
-![e0de4f8a1bacc1859981ccd85a3e33bd.png](../_resources/e0de4f8a1bacc1859981ccd85a3e33bd.png)
+<img src="{{ site.baseurl }}/assets/e0de4f8a1bacc1859981ccd85a3e33bd.png"/>
 
-![241d649c0cfec758711b469e6bdcd7c6.png](../_resources/241d649c0cfec758711b469e6bdcd7c6.png)
+<img src="{{ site.baseurl }}/assets/241d649c0cfec758711b469e6bdcd7c6.png"/>
 Execute 눌러보면 아래에 curl 요청 코드도 볼 수 있는데, 이 코드를 통해서 backend가 원하는 요청 정보와 front-end의 요청 구현사항을 비교해 볼 수 있음 (또는 개발자모드/네트워크에서 비교 가능함)
 
 
 
 Example value와 Schema 정의 확인 가능
-![938ad10899d538fe6e08ceece8ed0087.png](../_resources/938ad10899d538fe6e08ceece8ed0087.png)
-![aa54b4160afbb778bf0d7c0b52717c2f.png](../_resources/aa54b4160afbb778bf0d7c0b52717c2f.png)
+<img src="{{ site.baseurl }}/assets/938ad10899d538fe6e08ceece8ed0087.png"/>
+<img src="{{ site.baseurl }}/assets/aa54b4160afbb778bf0d7c0b52717c2f.png"/>
 
 페이지 페이지 하단에 Response, Request를 위한 Dto를 모아서 볼 수 있다.
 
@@ -66,7 +66,7 @@ http://172.90.4.13:4040/v3/api-docs/codereview-gpt
 
 ### Authorization 가능
 * 추가 설정이 필요하지만 JWT Token 처리할 수 있다.
-![f896e65a0524ee698d3662916ef7353b.png](../_resources/f896e65a0524ee698d3662916ef7353b.png)
+<img src="{{ site.baseurl }}/assets/f896e65a0524ee698d3662916ef7353b.png"/>
 
 
 
@@ -119,7 +119,7 @@ implementation 'org.springdoc:springdoc-openapi-starter-webmvc-api:2.0.2'
 
 ## 그룹 정의
 **<mark style="background: #ffd400">@Tag</mark>**
-![8a2095e2adb20799af421f7dffd0487b.png](../_resources/8a2095e2adb20799af421f7dffd0487b.png)
+<img src="{{ site.baseurl }}/assets/8a2095e2adb20799af421f7dffd0487b.png"/>
 ```
 @Tag(name = "관리자 관리", description = "admin-users 관리를 위한 api 입니다.")
 ```
@@ -132,7 +132,7 @@ implementation 'org.springdoc:springdoc-openapi-starter-webmvc-api:2.0.2'
 
 **<mark style="background: #ffd400">@Operation</mark>**
 * 요청 메서드의 API 이름, 속성  정의
-![0cbfe34627cdd12c37de837f4245fe3d.png](../_resources/0cbfe34627cdd12c37de837f4245fe3d.png)
+<img src="{{ site.baseurl }}/assets/0cbfe34627cdd12c37de837f4245fe3d.png"/>
 
 ```
 @Operation(summary = "관리자 전체 조회", description = "페이지 별 관리자 리스트를 반환한다.")
@@ -144,7 +144,7 @@ implementation 'org.springdoc:springdoc-openapi-starter-webmvc-api:2.0.2'
 **<mark style="background: #ffd400">@ApiResponses</mark>**
 **<mark style="background: #ffd400">@ApiResponse</mark>**
 * 메서드 위에 Operation과 같이 정의
-![dea15433ec44be0b53b6b08513049454.png](../_resources/dea15433ec44be0b53b6b08513049454.png)
+<img src="{{ site.baseurl }}/assets/dea15433ec44be0b53b6b08513049454.png"/>
 
 e.g.
  ```
@@ -165,7 +165,7 @@ e.g.
 
 
 ### 요청 타입 및 값 정의
-![5239666c4657b490680de87cdfb40d2b.png](../_resources/5239666c4657b490680de87cdfb40d2b.png)
+<img src="{{ site.baseurl }}/assets/5239666c4657b490680de87cdfb40d2b.png"/>
 *  **<mark style="background: #ffd400">@Parameter</mark>**
 *  	이름 : 컨트롤러에서 요청하는 함수 내의 파라미터  
 * 숨기고 싶을때 @Hidden
@@ -198,7 +198,7 @@ e.g.
 
 
 ### 반환타입 및 값 정의
-![917ab53bcc8a0cb62608af3e7507bafe.png](../_resources/917ab53bcc8a0cb62608af3e7507bafe.png)
+<img src="{{ site.baseurl }}/assets/917ab53bcc8a0cb62608af3e7507bafe.png"/>
 * class, record, interface 모두 가능
 * 컨트롤러에서 할 수도 있지만 타입을 정의하는 위치(class 타입 정의)에서 사용
 
@@ -229,10 +229,10 @@ e.g.
 * 기본적으로는 지원해줌 
 e.g. Page&lt;AdminUserResponse&gt; 👉 PageAdminUserResponse
 
-![d66d15f876b3d5a4804d2f0aa54ee37e.png](../_resources/d66d15f876b3d5a4804d2f0aa54ee37e.png)
+<img src="{{ site.baseurl }}/assets/d66d15f876b3d5a4804d2f0aa54ee37e.png"/>
 * 또는 (필요하다면) Example을 위한 클래스를 선언해준다.
 
-![3e19d8c499344652ce250c4a864b759f.png](../_resources/3e19d8c499344652ce250c4a864b759f.png)
+<img src="{{ site.baseurl }}/assets/3e19d8c499344652ce250c4a864b759f.png"/>
 
 
 ```
