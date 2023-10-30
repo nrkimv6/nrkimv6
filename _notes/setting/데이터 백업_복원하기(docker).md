@@ -15,8 +15,8 @@ altitude: 0.0000
 - 아래 두 파일을 받고 컨테이너 아이디를 고쳐줌
 
 
-[backup.sh](../_resources/backup.sh)
-[restore.sh](../_resources/restore.sh)
+<a href="{{ site.baseurl }}/assets/backup.sh">backup.sh</a>
+<a href="{{ site.baseurl }}/assets/restore.sh">restore.sh</a>
 
 
 저는 도커 하나에 서버랑 같이 돌리는데, 쓰고있다면 단독이어도 상관은 없습니다
