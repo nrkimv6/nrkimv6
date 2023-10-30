@@ -21,12 +21,12 @@ altitude: 0.0000
 
 저는 도커 하나에 서버랑 같이 돌리는데, 쓰고있다면 단독이어도 상관은 없습니다
 
-![KakaoTalk_Image_2023-10-19-16-48-39.jpeg](../_resources/KakaoTalk_Image_2023-10-19-16-48-39.jpeg)
+<img src="{{ site.baseurl }}/assets/KakaoTalk_Image_2023-10-19-16-48-39.jpeg"/>
 
 
-![KakaoTalk_Image_2023-10-19-16-48-43.jpeg](../_resources/KakaoTalk_Image_2023-10-19-16-48-43.jpeg)
+<img src="{{ site.baseurl }}/assets/KakaoTalk_Image_2023-10-19-16-48-43.jpeg"/>
 
-![KakaoTalk_Image_2023-10-19-16-48-44.jpeg](../_resources/KakaoTalk_Image_2023-10-19-16-48-44.jpeg)
+<img src="{{ site.baseurl }}/assets/KakaoTalk_Image_2023-10-19-16-48-44.jpeg"/>
 
 
 터미널에서 권한설정해주기
@@ -58,7 +58,7 @@ chmod +x ./restore.sh
 ```
 
 
-![스크린샷 2023-10-19 오후 4.52.49.png](../_resources/스크린샷%202023-10-19%20오후%204.52.49-1.png)
+<img src="{{ site.baseurl }}/assets/스크린샷%202023-10-19%20오후%204.52.49-1.png"/>
 
 삽입이나 codereviewgpt관련 에러만 없으면 문제 없음
 Database restored and permissions granted successfully! 이전에 특별한 에러가 있으면 문제있음..
