@@ -17,9 +17,9 @@ TODO : 172.90.4.13:8080를 자기 IP&포트로 바꿔주기.
 Front-end
 
 
-[Dockerfile](../_resources/Dockerfile)
+<a href="{{ site.baseurl }}/assets/Dockerfile">Dockerfile</a>
 
-[.env](../_resources/제목%20없음.env)
+<a href="{{ site.baseurl }}/assets/제목%20없음.env">.env</a>
 
 
 
@@ -32,16 +32,16 @@ Backend
 
 
 
-[docker-compose.yml](../_resources/docker-compose.yml)
+<a href="{{ site.baseurl }}/assets/docker-compose.yml">docker-compose.yml</a>
 
 
 
-[Dockerfile](../_resources/Dockerfile-1)
+<a href="{{ site.baseurl }}/assets/Dockerfile-1">Dockerfile</a>
 
 
 
 
-[build.sh](../_resources/build.sh)
+<a href="{{ site.baseurl }}/assets/build.sh">build.sh</a>
 
 
 ---
@@ -91,7 +91,7 @@ vim homebrew.mxcl.jenkins-lts.plist
 Jenkins - pipeline create
 
 
-<a href="{{ site.baseurl }}/assets/jenkinsfile"/>jenkinsfile</a>]
+<a href="{{ site.baseurl }}/assets/jenkinsfile">jenkinsfile</a>]
 동작순서
 * backend git pull
 * frontend git pull
