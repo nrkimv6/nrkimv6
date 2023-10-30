@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  app: # This is the name of your application service
+    build:
+      context: . # Assuming your Dockerfile is in the same directory as docker-compose.yml
+      dockerfile: Dockerfile # Specify the name of your Dockerfile if it's not named 'Dockerfile'
+    ports:
+      - "8080:8080" # Here, I've assumed 8080 as the default port. Modify as needed.
+    depends_on:
+      - postgres
+    environment:
+      - port=8080
+
+  frontend:
+    build:
+      context: /Users/mz01-risingnrkim/Documents/workspace/codereview-gpt-client # Path to your React app's root folder
+      dockerfile: Dockerfile # Assuming you named your React Dockerfile as 'Dockerfile'
+    ports:
+      - "3000:3000" # Map port 3000 on host to port 80 in container
+    environment:
+      - HOST=0.0.0.0
+      - REACT_APP_SERVER_ENDPOINT=http://172.90.4.13:8080/api/v1
+
+  postgres:
+    image: postgres:latest
+    restart: always
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=password!
+      - POSTGRES_DB=codereviewgpt
+      - POSTGRES_MAX_CONNECTIONS=200
+    ports:
+      - '5434:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

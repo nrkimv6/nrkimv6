@@ -91,8 +91,7 @@ vim homebrew.mxcl.jenkins-lts.plist
 Jenkins - pipeline create
 
 
-[jenkinsfile](../_resources/jenkinsfile)
-<img src="{{ site.baseurl }}/assets/f210da33c28546052ec9c717356dda22.png"/>
+<a href="{{ site.baseurl }}/assets/jenkinsfile"/>jenkinsfile</a>]
 동작순서
 * backend git pull
 * frontend git pull

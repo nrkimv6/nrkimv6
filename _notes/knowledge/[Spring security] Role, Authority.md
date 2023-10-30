@@ -51,7 +51,6 @@ Role
 ---
 * roles, authority 개념 https://www.youtube.com/watch?v=HWp0tRYJVCY
 <img src="{{ site.baseurl }}/assets/da25fd69b4b256e5264d612979069f31.png"/>
-  
 ---
 by chatgpt
 
